@@ -18,8 +18,8 @@ function ShippingScreen() {
     const [postalCode, setPostalCode] = useState(shippingAddress.postalCode)
     const [country, setCountry] = useState(shippingAddress.country)
 
+    
     const navigate = useNavigate();
-
     const submitHandler = (e) => {
       e.preventDefault();
       dispatch(saveShippingAddress({ address, city, postalCode, country }));

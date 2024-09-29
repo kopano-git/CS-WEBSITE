@@ -8,7 +8,7 @@ import { addToCart, removeFromCart } from '../actions/cartActions';
 function CartScreen() {
     const { id: productId } = useParams(); // gets the product id from the URL
     const location = useLocation();
-    const navigate = useNavigate();
+    
 
     const userLogin = useSelector(state => state.userLogin);
     const { userInfo } = userLogin;
@@ -20,6 +20,7 @@ function CartScreen() {
 
     const cart = useSelector(state => state.cart)
     const {cartItems} = cart
+    const navigate = useNavigate();
     
 
     useEffect(() => {
@@ -63,7 +64,7 @@ function CartScreen() {
                                         </Col>
 
                                         <Col md={2}>
-                                            ${item.price}
+                                            R{item.price}
                                         </Col>
 
                                         <Col md={3}>
